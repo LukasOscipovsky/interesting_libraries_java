@@ -2,11 +2,12 @@ package oscipovsky.lukas.lombok;
 
 import lombok.Cleanup;
 
+import java.io.IOException;
 import java.io.InputStream;
 
 public class CleanupExample {
 
-    public static void main(String... args) {
+    public static void main(String... args) throws IOException {
         //
         // Cleanup
         //

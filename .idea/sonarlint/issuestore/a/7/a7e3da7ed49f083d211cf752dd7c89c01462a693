@@ -1,9 +1,0 @@
-
-¢%squid:RedundantThrowsDeclarationCheck"lRemove the declaration of thrown exception 'java.io.IOException', as it cannot be thrown from method's body.(ú˚øÿ8Á›ç≈ã-
-gsquid:CommentedOutCodeLine"<This block of commented-out lines of code should be removed.(‰µíµ8Á›ç≈ã-
-Y
-squid:S106"9Replace this use of System.out or System.err by a logger.(“£É⁄˛ˇˇˇˇ8Á›ç≈ã-
-T
-squid:S106"9Replace this use of System.out or System.err by a logger.(¡ﬂá‹8Á›ç≈ã-
-Csquid:S1481"'Remove this unused "is" local variable.(ôÃìì8Á›ç≈ã-
-Rsquid:S1854"6Remove this useless assignment to local variable "is".(ôÃìì8Á›ç≈ã-

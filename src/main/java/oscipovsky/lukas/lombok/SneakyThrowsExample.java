@@ -9,7 +9,7 @@ public class SneakyThrowsExample {
 
     @SneakyThrows
     static void sneakyThrows() {
-        throw new Main.LukasException();
+        throw new SneakyThrowsExample.LukasException();
 
         //} catch (LukasException ex) {
         //    throw new RuntimeException(ex);
