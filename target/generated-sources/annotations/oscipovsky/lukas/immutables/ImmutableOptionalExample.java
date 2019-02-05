@@ -1,8 +1,16 @@
 package oscipovsky.lukas.immutables;
 
+import com.google.common.base.MoreObjects;
+import com.google.errorprone.annotations.CanIgnoreReturnValue;
+import com.google.errorprone.annotations.Var;
 import java.util.Objects;
 import java.util.Optional;
-import javax.annotation.Generated;
+import javax.annotation.CheckReturnValue;
+import javax.annotation.Nullable;
+import javax.annotation.ParametersAreNonnullByDefault;
+import javax.annotation.concurrent.Immutable;
+import javax.annotation.concurrent.NotThreadSafe;
+import org.immutables.value.Generated;
 
 /**
  * Immutable implementation of {@link OptionalExample}.
@@ -10,12 +18,15 @@ import javax.annotation.Generated;
  * Use the builder to create immutable instances:
  * {@code ImmutableOptionalExample.builder()}.
  */
-@SuppressWarnings("all")
-@Generated({"Immutables.generator", "OptionalExample"})
+@Generated(from = "OptionalExample", generator = "Immutables")
+@SuppressWarnings({"all"})
+@ParametersAreNonnullByDefault
+@Immutable
+@CheckReturnValue
 public final class ImmutableOptionalExample extends OptionalExample {
-  private final String name;
+  private final @Nullable String name;
 
-  private ImmutableOptionalExample(String name) {
+  private ImmutableOptionalExample(@Nullable String name) {
     this.name = name;
   }
 
@@ -33,7 +44,7 @@ public final class ImmutableOptionalExample extends OptionalExample {
    * @return A modified copy of {@code this} object
    */
   public final ImmutableOptionalExample withName(String value) {
-    String newValue = Objects.requireNonNull(value, "name");
+    @Nullable String newValue = Objects.requireNonNull(value, "name");
     if (Objects.equals(this.name, newValue)) return this;
     return new ImmutableOptionalExample(newValue);
   }
@@ -45,7 +56,7 @@ public final class ImmutableOptionalExample extends OptionalExample {
    * @return A modified copy of {@code this} object
    */
   public final ImmutableOptionalExample withName(Optional<String> optional) {
-    String value = optional.orElse(null);
+    @Nullable String value = optional.orElse(null);
     if (Objects.equals(this.name, value)) return this;
     return new ImmutableOptionalExample(value);
   }
@@ -55,7 +66,7 @@ public final class ImmutableOptionalExample extends OptionalExample {
    * @return {@code true} if {@code this} is equal to {@code another} instance
    */
   @Override
-  public boolean equals(Object another) {
+  public boolean equals(@Nullable Object another) {
     if (this == another) return true;
     return another instanceof ImmutableOptionalExample
         && equalTo((ImmutableOptionalExample) another);
@@ -71,8 +82,8 @@ public final class ImmutableOptionalExample extends OptionalExample {
    */
   @Override
   public int hashCode() {
-    int h = 31;
-    h = h * 17 + Objects.hashCode(name);
+    @Var int h = 5381;
+    h += (h << 5) + Objects.hashCode(name);
     return h;
   }
 
@@ -82,11 +93,10 @@ public final class ImmutableOptionalExample extends OptionalExample {
    */
   @Override
   public String toString() {
-    StringBuilder builder = new StringBuilder("OptionalExample{");
-    if (name != null) {
-      builder.append("name=").append(name);
-    }
-    return builder.append("}").toString();
+    return MoreObjects.toStringHelper("OptionalExample")
+        .omitNullValues()
+        .add("name", name)
+        .toString();
   }
 
   /**
@@ -107,6 +117,11 @@ public final class ImmutableOptionalExample extends OptionalExample {
 
   /**
    * Creates a builder for {@link ImmutableOptionalExample ImmutableOptionalExample}.
+   * <pre>
+   * ImmutableOptionalExample.builder()
+   *    .name(String) // optional {@link OptionalExample#getName() name}
+   *    .build();
+   * </pre>
    * @return A new ImmutableOptionalExample builder
    */
   public static ImmutableOptionalExample.Builder builder() {
@@ -120,8 +135,10 @@ public final class ImmutableOptionalExample extends OptionalExample {
    * <p><em>{@code Builder} is not thread-safe and generally should not be stored in a field or collection,
    * but instead used immediately to create instances.</em>
    */
+  @Generated(from = "OptionalExample", generator = "Immutables")
+  @NotThreadSafe
   public static final class Builder {
-    private String name;
+    private @Nullable String name;
 
     private Builder() {
     }
@@ -133,6 +150,7 @@ public final class ImmutableOptionalExample extends OptionalExample {
      * @param instance The instance from which to copy values
      * @return {@code this} builder for use in a chained invocation
      */
+    @CanIgnoreReturnValue 
     public final Builder from(OptionalExample instance) {
       Objects.requireNonNull(instance, "instance");
       Optional<String> nameOptional = instance.getName();
@@ -147,6 +165,7 @@ public final class ImmutableOptionalExample extends OptionalExample {
      * @param name The value for name
      * @return {@code this} builder for chained invocation
      */
+    @CanIgnoreReturnValue 
     public final Builder name(String name) {
       this.name = Objects.requireNonNull(name, "name");
       return this;
@@ -157,6 +176,7 @@ public final class ImmutableOptionalExample extends OptionalExample {
      * @param name The value for name
      * @return {@code this} builder for use in a chained invocation
      */
+    @CanIgnoreReturnValue 
     public final Builder name(Optional<String> name) {
       this.name = name.orElse(null);
       return this;

@@ -3,7 +3,10 @@ oscipovsky\lukas\immutables\ImmutableBook.class
 oscipovsky\lukas\immutables\NullableExample.class
 oscipovsky\lukas\lombok\Person$PersonBuilder.class
 oscipovsky\lukas\lombok\DataExample.class
+oscipovsky\lukas\immutables\ImmutableNormalized.class
 oscipovsky\lukas\lombok\Game.class
+oscipovsky\lukas\immutables\ImmutableNormalized$Builder.class
+oscipovsky\lukas\immutables\TupleExample.class
 oscipovsky\lukas\immutables\ImmutableCar$Builder.class
 oscipovsky\lukas\immutables\ImmutableNullableExample$1.class
 oscipovsky\lukas\immutables\ImmutableBook$Builder.class
@@ -23,6 +26,7 @@ oscipovsky\lukas\lombok\OnXExample.class
 oscipovsky\lukas\lombok\VarValExample.class
 oscipovsky\lukas\immutables\Order.class
 oscipovsky\lukas\immutables\ImmutableCar.class
+oscipovsky\lukas\immutables\ImmutableSingletonExample$1.class
 oscipovsky\lukas\lombok\ThreadSafe.class
 oscipovsky\lukas\lombok\SuperBuilderExample.class
 oscipovsky\lukas\lombok\AccesorsExample.class
@@ -34,6 +38,7 @@ oscipovsky\lukas\lombok\SneakyThrowsExample$LukasException.class
 oscipovsky\lukas\immutables\CollectionExample.class
 oscipovsky\lukas\lombok\Gender.class
 oscipovsky\lukas\lombok\PersonExample.class
+oscipovsky\lukas\immutables\ImmutableNormalized$1.class
 oscipovsky\lukas\lombok\Person.class
 oscipovsky\lukas\autovalue\AutoValue_AutoValueExampleBuilder.class
 oscipovsky\lukas\immutables\ImmutableCollectionExample.class
@@ -43,6 +48,7 @@ oscipovsky\lukas\lombok\Car.class
 oscipovsky\lukas\immutables\Person.class
 oscipovsky\lukas\lombok\TitleExample.class
 oscipovsky\lukas\lombok\LogExample.class
+oscipovsky\lukas\immutables\ImmutableSingletonExample.class
 oscipovsky\lukas\immutables\Car.class
 oscipovsky\lukas\autovalue\AutoValue_AutoValueExampleBuilder$Builder.class
 oscipovsky\lukas\lombok\SuperClass.class
@@ -50,15 +56,19 @@ oscipovsky\lukas\lombok\Title.class
 oscipovsky\lukas\lombok\Extensions.class
 oscipovsky\lukas\autovalue\AutoValue_AutoValueExample.class
 oscipovsky\lukas\immutables\ImmutableOptionalExample$1.class
+oscipovsky\lukas\immutables\ImmutableSingletonExample$Builder.class
+oscipovsky\lukas\immutables\TupleExampleTuple.class
 oscipovsky\lukas\immutables\Item.class
 oscipovsky\lukas\lombok\HelperClassExample.class
 oscipovsky\lukas\lombok\SneakyThrowsExample.class
+oscipovsky\lukas\immutables\Normalized.class
 oscipovsky\lukas\lombok\BookExample.class
 oscipovsky\lukas\immutables\ImmutableOrder$Builder.class
 oscipovsky\lukas\lombok\UtilityClassExample.class
 oscipovsky\lukas\lombok\Book.class
 oscipovsky\lukas\immutables\ImmutablePerson$Builder.class
 oscipovsky\lukas\immutables\ImmutableOrder.class
+oscipovsky\lukas\immutables\SingletonExample.class
 oscipovsky\lukas\immutables\Book.class
 oscipovsky\lukas\immutables\ImmutableOrder$1.class
 oscipovsky\lukas\lombok\CleanupExample.class

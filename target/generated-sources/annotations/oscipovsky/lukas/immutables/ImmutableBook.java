@@ -1,9 +1,17 @@
 package oscipovsky.lukas.immutables;
 
+import com.google.common.base.MoreObjects;
+import com.google.errorprone.annotations.CanIgnoreReturnValue;
+import com.google.errorprone.annotations.Var;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
-import javax.annotation.Generated;
+import javax.annotation.CheckReturnValue;
+import javax.annotation.Nullable;
+import javax.annotation.ParametersAreNonnullByDefault;
+import javax.annotation.concurrent.Immutable;
+import javax.annotation.concurrent.NotThreadSafe;
+import org.immutables.value.Generated;
 
 /**
  * Immutable implementation of {@link Book}.
@@ -11,12 +19,15 @@ import javax.annotation.Generated;
  * Use the builder to create immutable instances:
  * {@code ImmutableBook.builder()}.
  */
-@SuppressWarnings("all")
-@Generated({"Immutables.generator", "Book"})
+@Generated(from = "Book", generator = "Immutables")
+@SuppressWarnings({"all"})
+@ParametersAreNonnullByDefault
+@Immutable
+@CheckReturnValue
 final class ImmutableBook extends Book {
   private final String author;
   private final String title;
-  private final int hashCode;
+  private transient final int hashCode;
 
   private ImmutableBook(ImmutableBook.Builder builder) {
     this.author = builder.author;
@@ -51,24 +62,24 @@ final class ImmutableBook extends Book {
   /**
    * Copy the current immutable object by setting a value for the {@link Book#getAuthor() author} attribute.
    * An equals check used to prevent copying of the same value by returning {@code this}.
-   * @param author A new value for author
+   * @param value A new value for author
    * @return A modified copy of the {@code this} object
    */
-  public final ImmutableBook withAuthor(String author) {
-    if (this.author.equals(author)) return this;
-    String newValue = Objects.requireNonNull(author, "author");
+  public final ImmutableBook withAuthor(String value) {
+    String newValue = Objects.requireNonNull(value, "author");
+    if (this.author.equals(newValue)) return this;
     return new ImmutableBook(newValue, this.title);
   }
 
   /**
    * Copy the current immutable object by setting a value for the {@link Book#getTitle() title} attribute.
    * An equals check used to prevent copying of the same value by returning {@code this}.
-   * @param title A new value for title
+   * @param value A new value for title
    * @return A modified copy of the {@code this} object
    */
-  public final ImmutableBook withTitle(String title) {
-    if (this.title.equals(title)) return this;
-    String newValue = Objects.requireNonNull(title, "title");
+  public final ImmutableBook withTitle(String value) {
+    String newValue = Objects.requireNonNull(value, "title");
+    if (this.title.equals(newValue)) return this;
     return new ImmutableBook(this.author, newValue);
   }
 
@@ -77,13 +88,14 @@ final class ImmutableBook extends Book {
    * @return {@code true} if {@code this} is equal to {@code another} instance
    */
   @Override
-  public boolean equals(Object another) {
+  public boolean equals(@Nullable Object another) {
     if (this == another) return true;
     return another instanceof ImmutableBook
         && equalTo((ImmutableBook) another);
   }
 
   private boolean equalTo(ImmutableBook another) {
+    if (hashCode != another.hashCode) return false;
     return title.equals(another.title);
   }
 
@@ -97,8 +109,8 @@ final class ImmutableBook extends Book {
   }
 
   private int computeHashCode() {
-    int h = 31;
-    h = h * 17 + title.hashCode();
+    @Var int h = 5381;
+    h += (h << 5) + title.hashCode();
     return h;
   }
 
@@ -108,9 +120,10 @@ final class ImmutableBook extends Book {
    */
   @Override
   public String toString() {
-    return "Book{"
-        + "title=" + title
-        + "}";
+    return MoreObjects.toStringHelper("Book")
+        .omitNullValues()
+        .add("title", title)
+        .toString();
   }
 
   /**
@@ -131,6 +144,12 @@ final class ImmutableBook extends Book {
 
   /**
    * Creates a builder for {@link ImmutableBook ImmutableBook}.
+   * <pre>
+   * ImmutableBook.builder()
+   *    .author(String) // required {@link Book#getAuthor() author}
+   *    .title(String) // optional {@link Book#getTitle() title}
+   *    .build();
+   * </pre>
    * @return A new ImmutableBook builder
    */
   public static ImmutableBook.Builder builder() {
@@ -144,12 +163,14 @@ final class ImmutableBook extends Book {
    * <p><em>{@code Builder} is not thread-safe and generally should not be stored in a field or collection,
    * but instead used immediately to create instances.</em>
    */
-  static final class Builder {
+  @Generated(from = "Book", generator = "Immutables")
+  @NotThreadSafe
+  public static final class Builder {
     private static final long INIT_BIT_AUTHOR = 0x1L;
     private long initBits = 0x1L;
 
-    private String author;
-    private String title;
+    private @Nullable String author;
+    private @Nullable String title;
 
     private Builder() {
     }
@@ -161,6 +182,7 @@ final class ImmutableBook extends Book {
      * @param instance The instance from which to copy values
      * @return {@code this} builder for use in a chained invocation
      */
+    @CanIgnoreReturnValue 
     public final Builder from(Book instance) {
       Objects.requireNonNull(instance, "instance");
       author(instance.getAuthor());
@@ -173,6 +195,7 @@ final class ImmutableBook extends Book {
      * @param author The value for author 
      * @return {@code this} builder for use in a chained invocation
      */
+    @CanIgnoreReturnValue 
     public final Builder author(String author) {
       this.author = Objects.requireNonNull(author, "author");
       initBits &= ~INIT_BIT_AUTHOR;
@@ -185,6 +208,7 @@ final class ImmutableBook extends Book {
      * @param title The value for title 
      * @return {@code this} builder for use in a chained invocation
      */
+    @CanIgnoreReturnValue 
     public final Builder title(String title) {
       this.title = Objects.requireNonNull(title, "title");
       return this;
@@ -203,7 +227,7 @@ final class ImmutableBook extends Book {
     }
 
     private String formatRequiredAttributesMessage() {
-      List<String> attributes = new ArrayList<String>();
+      List<String> attributes = new ArrayList<>();
       if ((initBits & INIT_BIT_AUTHOR) != 0) attributes.add("author");
       return "Cannot build Book, some of required attributes are not set " + attributes;
     }
