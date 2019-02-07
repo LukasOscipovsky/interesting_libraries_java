@@ -20,6 +20,7 @@ import org.immutables.value.Generated;
 @Generated(from = "NullableExample", generator = "Immutables")
 @SuppressWarnings({"all"})
 @ParametersAreNonnullByDefault
+@javax.annotation.processing.Generated("org.immutables.processor.ProxyProcessor")
 @Immutable
 @CheckReturnValue
 public final class ImmutableNullableExample implements NullableExample {

@@ -21,6 +21,7 @@ import org.immutables.value.Generated;
 @Generated(from = "OptionalExample", generator = "Immutables")
 @SuppressWarnings({"all"})
 @ParametersAreNonnullByDefault
+@javax.annotation.processing.Generated("org.immutables.processor.ProxyProcessor")
 @Immutable
 @CheckReturnValue
 public final class ImmutableOptionalExample extends OptionalExample {

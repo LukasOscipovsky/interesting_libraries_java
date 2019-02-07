@@ -22,6 +22,7 @@ import org.immutables.value.Generated;
 @Generated(from = "Normalized", generator = "Immutables")
 @SuppressWarnings({"all"})
 @ParametersAreNonnullByDefault
+@javax.annotation.processing.Generated("org.immutables.processor.ProxyProcessor")
 @Immutable
 @CheckReturnValue
 public final class ImmutableNormalized implements Normalized {

@@ -1,6 +1,9 @@
 
 package oscipovsky.lukas.autovalue;
 
+import javax.annotation.Generated;
+
+@Generated("com.google.auto.value.processor.AutoValueProcessor")
  final class AutoValue_AutoValueExample extends AutoValueExample {
 
   private final String currency;
